@@ -11,7 +11,7 @@ services:
                 max-size: 10m
                 max-file: "3"
         volumes:
-            - "${PWD}/db-data:/var/lib/postgresql/data"
+            - "/db-data:/var/lib/postgresql/data"
 
     local-runner:
         image: amazon/mwaa-local:2_5
@@ -26,10 +26,10 @@ services:
                 max-size: 10m
                 max-file: "3"
         volumes:
-            - "${PWD}/dags:/usr/local/airflow/dags"
-            - "${PWD}/plugins:/usr/local/airflow/plugins"
-            - "${PWD}/requirements:/usr/local/airflow/requirements"
-            - "${PWD}/startup_script:/usr/local/airflow/startup"
+            - "/mnt/c/ot-datateam-airflow/dags:/usr/local/airflow/dags"
+            - "/mnt/c/ot-datateam-airflow/plugins:/usr/local/airflow/plugins"
+            - "/mnt/c/ot-datateam-airflow/requirements/requirements.txt:/usr/local/airflow/requirements"
+            - "/mnt/c/ot-datateam-airflow/startup/startup_script:/usr/local/airflow/startup"
         ports:
             - "8080:8080"
         command: local-runner

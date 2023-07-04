@@ -28,8 +28,8 @@ services:
         volumes:
             - "/mnt/c/ot-datateam-airflow/dags:/usr/local/airflow/dags"
             - "/mnt/c/ot-datateam-airflow/plugins:/usr/local/airflow/plugins"
-            - "/mnt/c/ot-datateam-airflow/requirements/requirements.txt:/usr/local/airflow/requirements"
-            - "/mnt/c/ot-datateam-airflow/startup/startup_script:/usr/local/airflow/startup"
+            - "/mnt/c/ot-datateam-airflow/requirements.txt:/usr/local/airflow/requirements"
+            - "/mnt/c/ot-datateam-airflow/startup.sh:/usr/local/airflow/startup"
         ports:
             - "8080:8080"
         command: local-runner
